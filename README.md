@@ -1,5 +1,6 @@
 # My-Tetris-My-Adventure
-Gmae Tetris using Ruby
+Game Tetris using Ruby
+
 Music by RaR-SpIdEy
 http://www.newgrounds.com/audio/listen/115279
 
