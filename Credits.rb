@@ -1,0 +1,42 @@
+require 'gosu'
+#digunakan untuk memanggil library gosu
+
+require_relative 'Menu1'
+#digunakan untuk memanggil file atau menghubungkan file Menu1
+
+class Credits < Gosu::Window
+#class utama dalam file Menu
+
+	SCREEN_WIDTH = 650
+	SCREEN_HEIGHT = 496
+	#untuk menentukan lebar dan tinggi dari layar game
+	
+	def initialize
+		super(SCREEN_HEIGHT, SCREEN_WIDTH, false)
+		self.caption = 'My Tetris My Adventur : Credits'
+		@background = Gosu::Image.new(self, "media/Team.png")
+		@text1 = Gosu::Image.from_text(self, "Version 1.1", "Algerian", 20)
+	end
+	#method initialize merupakan method utama dalam program yang digunakan untuk mendeklarasikan variabel,
+	#menginput gambar,judul dalam window
+	
+	
+	def needs_cursor?
+		true
+	end
+	#digunakan untuk mengeluarkan pointer mouse pada layar
+	
+	def button_down(id)
+		case id
+		when Gosu::KbEscape
+			Menu1.new.show
+			#digunakamn jika pengguna menekan tombol escape maka akan memanggil class Menu1
+		end
+	end
+	
+	def draw
+		@background.draw(0,0,0)
+		@text1.draw(400,630,2)
+	end
+	#digunakan untuk menampilkan gambar sesuai dengan lokasi yang telah ditentukann
+end
